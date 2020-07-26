@@ -6,6 +6,16 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+/**
+ * vant插件的引入
+ */
+import { Button } from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Button);
+
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
