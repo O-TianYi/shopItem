@@ -1,18 +1,23 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div class="app-container">
+    
   </div>
 </template>
 
+
 <script>
 export default {
-  name: 'App'
-}
+  name: "Header",
+  data() {
+    return {
+        
+    };
+  },
+};
 </script>
 
 
 <style>
-@import './assets/init.less';
 </style>
 
 <style lang="less" scoped>
