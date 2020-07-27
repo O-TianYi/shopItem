@@ -34,6 +34,16 @@ export default new Router({
           path: 'member',
           name: 'Member',
           component: () => import('../views/member/Member.vue')
+        },
+        {
+          path: 'shoucangshangpin',
+          name: 'ShangPin',
+          component: () => import('../views/shoucangshangpin/shoucangshangpin.vue')
+        },
+        {
+          path: 'youhuiquan',
+          name: 'YouHuiQuan',
+          component: () => import('../views/youhuiquan/youhuiquan.vue')
         }
       ]
     }
