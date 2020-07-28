@@ -1,16 +1,16 @@
 <template>
-  <div class="main">
+  <div class="main" :class="{redstyle: isred}">
     <div class="goback" @click="$router.go(-1)">
       <van-icon name="arrow-left" size="8vw" />
     </div>
-    <span class="title">{{title}}</span>
-    <span class="edit">编辑</span>
+    <span :class="{title,redstyle: isred}" >{{title}}</span>
+    <span :class="{edit: true,hideenstyle: isred}" >编辑</span>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["title"],
+  props: ["title","isred"],
 };
 </script>
 
@@ -38,5 +38,12 @@ export default {
     color: #8d9b9d;
     cursor: pointer;
   }
+}
+.redstyle{
+  background-color: #CB1558;
+  color: #fff!important;
+}
+.hideenstyle{
+  display: none;
 }
 </style>

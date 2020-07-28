@@ -1,9 +1,23 @@
 <template>
-  <div>我是购物车</div>
+  <div>
+    <Title :title="title"/>
+    <List />
+  </div>
 </template>
 
 <script>
-export default {};
+import Title from '../../components/common/title'
+import List from '../../components/common/list'
+export default {
+  components:{
+    List,Title
+  },
+  data() {
+    return {
+      title:'购物车'
+    }
+  },
+};
 </script>
 
 <style lang="less" scoped>
