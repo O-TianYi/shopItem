@@ -9,7 +9,7 @@
       </header>
       <main>
         <ul>
-          <li v-for="(item,index) in data" :key="index">
+          <li v-for="(item,index) in data" :key="index" @click="goNext(item)">
             <slot name="number" :number="item.number"></slot>
             <slot name="icon" :url="item.icon"></slot>
             <slot name="name" :data="item.name"></slot>
@@ -24,6 +24,12 @@
 export default {
   data() {
     return {};
+  },
+  methods: {
+    // 路由跳转
+    goNext(item) {
+      this.$router.push({ name: item.routerURL, params: { title: item.name } });
+    },
   },
   props: ["data", "title"],
 };
@@ -40,9 +46,9 @@ export default {
     font-weight: 500;
     border-bottom: 1px solid #f4f4f4;
     padding: 20px;
-    padding-bottom: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     span {
       font-size: 25px;
       color: #95817d;
@@ -53,23 +59,29 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px;
+      padding: 20px 60px 50px 60px;
       li {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
         span {
-          font-size: 30px;
+          font-size: 25px;
           font-weight: 400;
           color: #5a201b;
+        }
+        .bolder {
+          font-size: 35px;
+          font-weight: 600;
         }
         span:nth-child(1) {
           margin-bottom: 20px;
           color: #62463e;
         }
-        img {
-          margin-bottom: 20px;
+        .icon-style {
+          margin-bottom: 10px;
+          height: 80px;
         }
       }
     }

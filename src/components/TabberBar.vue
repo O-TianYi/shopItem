@@ -61,7 +61,7 @@ export default {
 
       this.idx = index;
 
-      console.log(this);
+      // console.log(this);
       this.$router.push({ name });
     },
   },
